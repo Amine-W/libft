@@ -3,13 +3,17 @@
 #include <stdio.h>
 
 void *ft_memset(void *s, int c, size_t n) {
-    if (n == 0)
+    if (n < 0)
+        return 0;
+    if (n = 0)
         return s;
-   while(n > 0)
+    size_t i;
+    i = n;
+   while(i > 0)
    {
       *(char *)s = (char)c;
       s = (char *)s + 1;
-      n--;
+      i--;
    }
    return s;
 }
@@ -20,7 +24,7 @@ int   main(void)
     char str2[13] = "kratos messi";
     
     printf("Avant mon memeset(): %s\n", str1);
-    ft_memset(str1, '$', 6);
+    ft_memset(str1, '$', -1);
     printf("Après mon memset(): %s\n", str1);
     
     memset(str2, '$', 6);
