@@ -25,10 +25,10 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 
 int main()
 {
-    char d[50]; 
+    char d[] = ""; 
     char s[] = "kratos messi";
-
-    printf("Dest: %s\n", ft_memcpy(d, s, 6));
+    
+    printf("Dest: %s\n", ft_memcpy(d, s, sizeof(s)));
 
     return 0;
 }
