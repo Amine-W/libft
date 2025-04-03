@@ -28,8 +28,8 @@ int ft_atoi(char *str)
 
 int main (void)
 {
-    char str[] = "   -12345abc";
+    char str[] = "   +123dd45abc";
     int result = ft_atoi(str);
-    printf("The converted integer is: %d\n", result);
+    printf("kratos messi: %d\n", result);
     return 0;
 }
