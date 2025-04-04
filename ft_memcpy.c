@@ -19,14 +19,13 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
         d[i] = s[i];  
         i++;
     }
-
     return dst;  
 }
 
 int main()
 {
     char d[] = ""; 
-    char s[] = "kratos messi";
+    const char s[] = "kratos messi";
     
     printf("Dest: %s\n", ft_memcpy(d, s, sizeof(s)));
 
