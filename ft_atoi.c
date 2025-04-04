@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int ft_atoi(char *str)
+int ft_atoi(const char *str)
 {
-    static int i;
-    static int sign;
-    static int result;
+    int i;
+    int sign;
+    int result;
     
     i = 0;
     sign = 1;
@@ -28,7 +28,7 @@ int ft_atoi(char *str)
 
 int main (void)
 {
-    char str[] = "   +123dd45abc";
+    const char str[] = "   +123dd45abc";
     int result = ft_atoi(str);
     printf("kratos messi: %d\n", result);
     return 0;

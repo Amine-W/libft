@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int ft_strlen(char *str)
+size_t ft_strlen(const char *str)
 {
-    static int i;
+    int i;
 
     i = 0;
     while(str[i])

@@ -24,7 +24,7 @@ int main(void)
     char *result = ft_memchr(str, 'm', 8);
     
     if (result)
-        printf("il y'a bien une occurence dans votre chaîne de caractères: %s\n", result);
+        printf("il y'a bien une occurence dans votre chaîne de caractères: %c\n", *result);
     else
         printf("Y'a pas\n");
     return 0;
