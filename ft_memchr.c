@@ -20,13 +20,12 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 int main(void)
 {
-    char str[] = "str";
-    char *result = ft_memchr(str, 's', 3);
+    char str[] = "kratos messi";
+    char *result = ft_memchr(str, 'm', 8);
     
     if (result)
-        printf("Voici l'occurence trouvée dans votre chaîne de catactères: %c\n", *result);
+        printf("il y'a bien une occurence dans votre chaîne de caractères: %s\n", result);
     else
         printf("Y'a pas\n");
-
     return 0;
 }
