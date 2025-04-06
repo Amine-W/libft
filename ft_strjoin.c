@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void    *ft_putstr(char *str)
+void    ft_putstr(char *str)
 {
     int i;
 
@@ -51,10 +51,11 @@ char	*ft_strcat(char *dest, char *src)
 		i++;
 	while (src[j])
 	{
-		dest[i + j] = src[j];
+		dest[i] = src[j];
 		j++;
+		i++;
 	}
-	dest[i + j] = 0;
+	dest[i] = 0;
 	return (dest);
 }
 
