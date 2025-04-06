@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 size_t strlcpy(char *dst, const char *restrict src, size_t dsize)
 {

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 
 static size_t	ft_strnlen(char *dest, size_t size)
