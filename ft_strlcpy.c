@@ -2,7 +2,7 @@
 
 size_t strlcpy(char *dst, const char *restrict src, size_t dsize)
 {
-    int     i;
+    size_t     i;
 
     i = 0;
     while (src[i] && --dsize)

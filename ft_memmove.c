@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void *ft_memmove(void *dst, const void *src, size_t n)
 {
     const char *s;
     char *d;
@@ -12,12 +12,13 @@ void *ft_memmove(void *dst, const void *src, size_t len)
     i = 0;
     if (d > s)
     {
-        while (len-- > 0)
-            d[len] = s[len];
+        i = n;
+        while (i-- > 0)
+            d[i] = s[i];
     }
     else 
     {
-        while (i < len)
+        while (i < n)
         {
             d[i] = s[i];
             i++;
