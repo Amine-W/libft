@@ -28,7 +28,7 @@ int main() {
     strcpy( destination, source );
         
     /* We replace all 'a' characters */
-    while (pointer = strchr( destination, 'a' ) ) {
+    while (pointer = ft_strchr( destination, 'a' ) ) {
         *pointer = 'A';
     }
     
