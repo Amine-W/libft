@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void    ft_putstr(char *str)
+static void    ft_putstr(char *str)
 {
     int i;
 
@@ -13,7 +13,7 @@ void    ft_putstr(char *str)
     write(1, "\n", 1);
 }
 
-int		ft_strlen(char *str)
+static int		ft_strlen(char *str)
 {
 	int i;
 
@@ -23,7 +23,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-int		strslen(char **strs, int size, char *sep)
+static int		strslen(char **strs, int size, char *sep)
 {
 	int i;
 	int lng;
@@ -40,7 +40,7 @@ int		strslen(char **strs, int size, char *sep)
 }
 
 
-char	*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;
