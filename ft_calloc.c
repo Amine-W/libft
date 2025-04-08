@@ -7,10 +7,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return ((void *)malloc(1));
-	total = nmemb * size;
-	 // Vérifie les overflows
-	if (total / nmemb != size && total / size != nmemb)
+	// Vérifie les overflows
+	if (nmemb > INT_MAX / size)
 		return (NULL);
+	total = nmemb * size;
 	to_return = (char *)malloc(total);
 	if (to_return == NULL)
 		to_return = NULL;
