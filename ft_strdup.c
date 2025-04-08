@@ -21,7 +21,7 @@ char *ft_strdup(const char *s)
     i = 0;
     while (s[i])
     {
-        dst [i] = s[i];
+        dst[i] = s[i];
         i++;
     }
     dst[i] = '\0';
