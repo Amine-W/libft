@@ -77,7 +77,7 @@ char *ft_strtrim(char const *s1, char const *set)
 
 int main(void)
 {
-    char *s1= "!!krato!s messi";
-    char const *s = "!";
+    char *s1= "!!krato!s messi!!!";
+    char const *s = "!kie";
     printf("%s", ft_strtrim(s1, s));
 }
