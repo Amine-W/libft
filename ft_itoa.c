@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:02:00 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/28 16:38:54 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/04/28 18:19:41 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char *ft_itoa(int n)
 	char		res;
 	
 	size = ft_intlen(n);
-	//printf("Size[%i]\n", size);
+	printf("Size[%i]\n", size);
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if(!str)
 		return(NULL);
@@ -42,12 +42,12 @@ char *ft_itoa(int n)
 	while(size > 0)
 	{
 		res =  (n % 10) + '0';
-		//printf("res[%c]\n", res);
+		printf("res[%c]\n", res);
 		n  /= 10;
-		//printf("n[%i]\n", n);
-		//printf("Size[%i]\n", size);
+		printf("n[%i]\n", n);
+		printf("Size[%i]\n", size);
 		str[size -1] = res;
-		//printf("str[%i][%c]\n", size, str[size]);
+		printf("str[%i][%c]\n", size, str[size]);
 		size--;
 	}
 	return(str);
