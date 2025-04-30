@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:23:05 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/29 18:36:53 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/04/29 19:20:11 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_list = malloc(sizeof(t_list) * ft_lstsize(lst));
 	if(!new_list)
 		return (NULL);
+	new_elem = NULL;
 	while(lst->next != NULL)
 	{
 		new_list = ft_lstnew(f(lst->content));
