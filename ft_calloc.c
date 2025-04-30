@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/30 20:13:36 by amwahab           #+#    #+#             */
+/*   Updated: 2025/04/30 20:13:36 by amwahab          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -7,7 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return ((void *)malloc(1));
-	// Vérifie les overflows
 	if (nmemb > INT_MAX / size)
 		return (NULL);
 	total = nmemb * size;
@@ -17,20 +28,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	else
 		ft_bzero(to_return, total);
 	return (to_return);
-}
-
-
-int	main(void)
-{
-	int i;
-    int *tab;
-
-	tab = (int *)ft_calloc(5, sizeof(int));
-
-	printf("tab:\n");
-    for (i = 0; i < 5; i++)
-        printf("tab[%d] = %d\n", i, tab[i]);
-
-	free(tab);
-	return 0;
 }

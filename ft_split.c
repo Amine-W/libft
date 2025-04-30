@@ -6,17 +6,16 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:23:01 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/28 18:31:45 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/04/30 20:50:32 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int is_charset(char c, char *charset)
+static int	is_charset(char c, char *charset)
 {
 	int	i;
-	 
+
 	i = 0;
 	while (charset[i])
 	{
@@ -27,7 +26,7 @@ int is_charset(char c, char *charset)
 	return (0);
 }
 
-int	count_words(char *str, char *charset)
+static int	count_words(char *str, char *charset)
 {
 	int	i;
 	int	word_count;
@@ -45,20 +44,19 @@ int	count_words(char *str, char *charset)
 			while (str[i] && !is_charset(str[i], charset))
 				i++;
 		}
-		
 	}
-	return(word_count);
+	return (word_count);
 }
 
-char **ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset)
 {
-	int i;
-	int word_count;
-	int word_index;
-	int start;
-	char **result;
-	int len;
-	int k;
+	int		i;
+	int		word_count;
+	int		word_index;
+	int		start;
+	char	**result;
+	int		len;
+	int		k;
 
 	i = 0;
 	word_count = 0;

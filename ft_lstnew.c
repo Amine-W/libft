@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:58:40 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/29 12:45:28 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/04/30 20:24:03 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*caca;
 
 	caca = malloc(sizeof(t_list));
-	if(!caca)
+	if (!caca)
 		return (NULL);
 	caca->content = content;
 	caca->next = NULL;

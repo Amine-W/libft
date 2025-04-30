@@ -1,21 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/30 20:48:51 by amwahab           #+#    #+#             */
+/*   Updated: 2025/04/30 20:48:51 by amwahab          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void    ft_putstr(char *str)
+static int	ft_strlen(char *str)
 {
-    int i;
-
-    i = 0;
-    while(str[i])
-    {
-        write(1, &str[i], 1);
-        i++;
-    }
-    write(1, "\n", 1);
-}
-
-static int		ft_strlen(char *str)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -23,10 +22,10 @@ static int		ft_strlen(char *str)
 	return (i);
 }
 
-static int		strslen(char **strs, int size, char *sep)
+static int	strslen(char **strs, int size, char *sep)
 {
-	int i;
-	int lng;
+	int	i;
+	int	lng;
 
 	i = 0;
 	lng = 0;
@@ -38,7 +37,6 @@ static int		strslen(char **strs, int size, char *sep)
 	lng = lng + (size - 1) * ft_strlen(sep) + 1;
 	return (lng);
 }
-
 
 static char	*ft_strcat(char *dest, char *src)
 {
@@ -61,7 +59,7 @@ static char	*ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-    int		i;
+	int		i;
 	char	*str;
 
 	if (size == 0)
@@ -82,13 +80,4 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		i++;
 	}
 	return (str);
-}
-
-int main(void)
-{
-    char *tab[] = {"kratos", "messi"};
-    char *result;
-    result = ft_strjoin(2, tab, "$$");
-    ft_putstr(result);
-    return 0;
 }

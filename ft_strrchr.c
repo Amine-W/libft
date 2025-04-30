@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 08:32:14 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/30 08:41:01 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/04/30 20:51:11 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,3 @@ char *ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-int main(void) 
-{
-	const char str[] = "And the winner is, La Salle";
-	char c = 'a';
-	char *result;
-	
-	result = ft_strrchr(str, c);
-	printf("%s",result);
-	return (0);
-}
-

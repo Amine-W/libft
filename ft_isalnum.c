@@ -1,13 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/30 19:48:21 by amwahab           #+#    #+#             */
+/*   Updated: 2025/04/30 19:48:21 by amwahab          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= 65 && c <= 89) || (c >= 97 && c <= 122) || (c >= '0'&& c <= '9'))
-        return (1);
-    return (0);
-}
-
-int main(int ac, char **av)
-{
-    printf("%i\n",ft_isalnum('a'));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
