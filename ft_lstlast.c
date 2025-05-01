@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:50:11 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/30 20:22:55 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:43:29 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = lst;
 	if (temp == NULL)
@@ -22,5 +22,5 @@ t_list	*ft_lstlast(t_list *lst)
 	temp = lst;
 	while (temp->next != NULL)
 		temp = temp->next;
-	return(temp);
+	return (temp);
 }

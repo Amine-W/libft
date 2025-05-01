@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:58:40 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/30 20:24:03 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/04/30 22:00:24 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	caca->content = content;
 	caca->next = NULL;
+	return (caca);
 }

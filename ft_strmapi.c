@@ -6,13 +6,13 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:09:40 by amwahab           #+#    #+#             */
-/*   Updated: 2025/04/30 21:06:54 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:46:37 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*tab;
