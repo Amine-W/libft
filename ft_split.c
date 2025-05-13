@@ -6,87 +6,97 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:23:01 by amwahab           #+#    #+#             */
-/*   Updated: 2025/05/01 12:46:44 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/05/13 13:01:41 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_charset(char c, char charset)
-{
-	if (c == charset)
-		return (1);
-	return (0);
-}
-
-static int	count_words(const char *str, char charset)
+static int	count_words(const char *str, char c)
 {
 	int	i;
-	int	word_count;
+	int	count;
 
 	i = 0;
-	word_count = 0;
+	count = 0;
 	while (str[i])
 	{
-		while (str[i] && is_charset(str[i], charset))
+		while (str[i] && str[i] == c)
 			i++;
 		if (str[i])
 		{
-			word_count++;
-			while (str[i] && !is_charset(str[i], charset))
+			count++;
+			while (str[i] && str[i] != c)
 				i++;
 		}
 	}
-	return (word_count);
+	return (count);
 }
 
 static char	*allocate_word(const char *s, int start, int len)
 {
 	char	*word;
-	int		k;
+	int		i;
 
-	word = (char *)malloc(sizeof(char) * (len + 1));
+	word = malloc(sizeof(char) * (len + 1));
 	if (!word)
 		return (NULL);
-	k = 0;
-	while (k < len)
+	i = 0;
+	while (i < len)
 	{
-		word[k] = s[start + k];
-		k++;
+		word[i] = s[start + i];
+		i++;
 	}
-	word[k] = '\0';
+	word[i] = '\0';
 	return (word);
 }
 
-char	**ft_split(const char *s, char c)
+static void	free_all(char **result, int last)
 {
-	int		i ;
-	int		word_count;
-	int		word_index;
-	int		start;
-	char	**result;
+	while (last > 0)
+		free(result[--last]);
+	free(result);
+}
 
-	word_count = count_words(s, c);
-	result = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (!result)
-		return (NULL);
+static int	fill_word_array(char **result, const char *s, char c)
+{
+	int	i;
+	int	word_index;
+	int	start;
+
 	i = 0;
 	word_index = 0;
 	while (s[i])
 	{
-		while (s[i] && is_charset(s[i], c))
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
 		{
 			start = i;
-			while (s[i] && !is_charset(s[i], c))
+			while (s[i] && s[i] != c)
 				i++;
 			result[word_index] = allocate_word(s, start, i - start);
 			if (!result[word_index])
-				return (NULL);
+				return (free_all(result, word_index), 0);
 			word_index++;
 		}
 	}
 	result[word_index] = NULL;
+	return (1);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**result;
+	int		words;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	result = malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	if (!fill_word_array(result, s, c))
+		return (NULL);
 	return (result);
 }
