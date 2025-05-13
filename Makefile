@@ -6,7 +6,7 @@
 #    By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/27 15:55:25 by amwahab           #+#    #+#              #
-#    Updated: 2025/05/13 14:35:32 by amwahab          ###   ########.fr        #
+#    Updated: 2025/05/13 14:36:50 by amwahab          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,32 +59,27 @@ SRCS_BONUS	=	ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
-OBJ = $(SRCS:.c=.o)
-BONUS_OBJ = $(BONUS_SRCS:.c=.o)
+OBJS	= $(SRCS:.c=.o)
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 
-# Règle principale
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
 all: $(NAME)
 
-# Compilation de la libft
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-# Compilation des bonus
-bonus: $(NAME) $(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
-
-# Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
-# Suppression complète (objets et libft.a)
 fclean: clean
 	rm -f $(NAME)
 
-# Recompilation
 re: fclean all
 
-# Compilation des fichiers .c en fichiers .o
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus: all $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS_BONUS)
+
+.PHONY: all re fclean clean bonus
 
