@@ -6,7 +6,7 @@
 /*   By: amwahab <amwahab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:23:05 by amwahab           #+#    #+#             */
-/*   Updated: 2025/05/13 14:18:34 by amwahab          ###   ########.fr       */
+/*   Updated: 2025/05/13 14:47:05 by amwahab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_elem;
 
-	if (!f || !del)
-		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
